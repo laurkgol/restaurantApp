@@ -1,4 +1,12 @@
 <h2>Restaurants Near General Assembly DC</h2>
+<h3>New Restaurant</h3>
+<form action="/restaurants" method="post">
+  <input type="text" name="restaurant[name]" placeholder="Name"/>
+  <input type="text" name="restaurant[type]" placeholder="Type"/>
+  <input type="text" name="restaurant[photo_url]" placeholder="Photo Link"/>
+  <input type="text" name="restaurant[street_address]" placeholder="Street Address"/>
+  <button type="submit"> Submit </button>
+</form>
 
   <h3 data-ng-repeat="restaurant in vm.restaurants">
     <a data-ui-sref="show({name: restaurant.name})">{{restaurant.name}} - {{restaurant.type}}</a>
