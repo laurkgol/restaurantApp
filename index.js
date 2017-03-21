@@ -10,9 +10,9 @@ const app = express()
 app.use("/assets", express.static("public"));
 app.use(parser.urlencoded({extended: true}));
 
-app.set("port", process.env.PORT || 3001);
-app.listen(3001, () => {
-console.log("Express Started on Port 3001")
+app.set("port", process.env.PORT || 5001);
+app.listen(5001, () => {
+console.log("Express Started on Port 5001")
 })
 
 app.get("/api/restaurants", function(req, res){
