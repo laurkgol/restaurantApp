@@ -3,5 +3,11 @@
 <h3>Washington, DC</h3>
 <img ng-src={{vm.restaurant.photo_url}}>
 
-<a data-ui-sref="commentEdit({id: vm.comment.id})">Edit</a>
+<form>
+  <input type="text" ng-model="vm.restaurant.name" placeholder={{vm.restaurant.name}}/>
+  <input type="text" ng-model="vm.restaurant.type" placeholder={{vm.restaurant.type}}/>
+  <input type="text" ng-model="vm.restaurant.photo_url" placeholder={{vm.restaurant.photo_url}}/>
+  <input type="text" ng-model="vm.restaurant.street_address" placeholder={{vm.restaurant.street_address}}/>
+  <button data-ng-click="vm.update()"> Update </button>
+</form>
 <button type="button" data-ng-click="vm.destroy()">Delete</button>

@@ -47,6 +47,6 @@ app.delete("/api/restaurants/:name", function(req, res){
 
 app.put("/api/restaurants/:name", function(req, res){
   Restaurant.findOneAndUpdate({name: req.params.name}, req.body.restaurant, {new: true}).then(function(restaurant){
-    res.json(restaurant)
+    res.json({success: true})
   });
 });

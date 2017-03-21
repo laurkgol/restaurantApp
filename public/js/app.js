@@ -17,16 +17,11 @@ angular
 ])
 .controller("showCtrl", [
  "$stateParams",
- "$state",
+ // "$state",
  "Restaurant",
  showController
 ])
-// .controller("StudentEditController", [
-//     "Restaurant",
-//     "$stateParams",
-//     "$state",
-//     editController
-//   ])
+
 
 function Router($stateProvider) {
     $stateProvider
@@ -69,24 +64,11 @@ function indexController (Restaurant, $state) {
 
 function showController ($stateParams, Restaurant) {
     this.restaurant = Restaurant.get({name: $stateParams.name})
+    this.update = function(){
+      this.restaurant.$update({name: $stateParams.name})
+      this.restaurant.$save()
+      // .then(function(restaurant){
+      //   // $state.go("indexCtrl",{name: restaurant.name})
+      // })
+     }
   }
-
-  function newController(Restaurant, $state){
-   this.restaurant = new Restaurant()
-   this.create = function(){
-     this.restaurant.$save().then(function(restaurant){
-       $state.go("showCtrl",{name: restaurant.name})
-     })
-    //  update: { method: "POST" }
-   }
-  }
-
-  function editController( Restaurant, $stateParams, $state ){
- this.restaurant = Restaurant.get({name: $stateParams.name});
- this.update = function(){
-   this.restaurant.$update({name: $stateParams.name}).then(function(restaurant){
-     $state.go("indexCtrl",{name: restaurant.name})
-   })
-   console.log("student updated")
- }
- }
