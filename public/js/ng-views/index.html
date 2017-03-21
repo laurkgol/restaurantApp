@@ -1,11 +1,11 @@
 <h2>Restaurants Near General Assembly DC</h2>
 <h3>New Restaurant</h3>
-<form action="/restaurants" method="post">
-  <input type="text" name="restaurant[name]" placeholder="Name"/>
-  <input type="text" name="restaurant[type]" placeholder="Type"/>
-  <input type="text" name="restaurant[photo_url]" placeholder="Photo Link"/>
-  <input type="text" name="restaurant[street_address]" placeholder="Street Address"/>
-  <button type="submit"> Submit </button>
+<form>
+  <input type="text" ng-model="vm.restaurant.name" placeholder="Name"/>
+  <input type="text" ng-model="vm.restaurant.type" placeholder="Type"/>
+  <input type="text" ng-model="vm.restaurant.photo_url" placeholder="Photo Link"/>
+  <input type="text" ng-model="vm.restaurant.street_address" placeholder="Street Address"/>
+  <button data-ng-click="vm.create()"> Create </button>
 </form>
 
   <h3 data-ng-repeat="restaurant in vm.restaurants">

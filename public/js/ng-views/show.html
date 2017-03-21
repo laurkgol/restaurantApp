@@ -2,3 +2,6 @@
 <h3>{{vm.restaurant.street_address}}</h3>
 <h3>Washington, DC</h3>
 <img ng-src={{vm.restaurant.photo_url}}>
+
+<a data-ui-sref="commentEdit({id: vm.comment.id})">Edit</a>
+<button type="button" data-ng-click="vm.destroy()">Delete</button>

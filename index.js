@@ -4,10 +4,10 @@ var parser = require("body-parser")
 
 const app = express()
 
-// var restaurant = mongoose.model
+
 
 app.use("/assets", express.static("public"));
-app.use(parser.urlencoded({extended: true}));
+app.use(parser.json({extended: true}));
 
 app.set("port", process.env.PORT || 5001);
 app.listen(5001, () => {
@@ -26,13 +26,15 @@ app.get("/api/restaurants", function(req, res){
 
 
 app.get("/api/restaurants/:name", function(req, res){
+
   Restaurant.findOne({name: req.params.name}).then(function(restaurant){
     res.json(restaurant)
   });
 });
 
 app.post("/api/restaurants", function(req, res){
-  Restaurant.create(req.body.restaurant).then(function(restaurant){
+  console.log(req.body)
+  Restaurant.create(req.body).then(function(restaurant){
     res.json(restaurant)
   });
 });

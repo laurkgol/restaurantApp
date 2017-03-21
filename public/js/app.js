@@ -17,20 +17,16 @@ angular
 ])
 .controller("showCtrl", [
  "$stateParams",
+ "$state",
  "Restaurant",
  showController
 ])
-.controller("newCtrl",[
-    "Restaurant",
-    "$state",
-    newController
-  ])
-  .controller("StudentEditController", [
-    "Restaurant",
-    "$stateParams",
-    "$state",
-    editController
-  ])
+// .controller("StudentEditController", [
+//     "Restaurant",
+//     "$stateParams",
+//     "$state",
+//     editController
+//   ])
 
 function Router($stateProvider) {
     $stateProvider
@@ -53,14 +49,22 @@ function Router($stateProvider) {
 
   }
 
-  function Restaurant ($resource) {
+  function Restaurant ($resource, $state, $stateParams) {
   return $resource("/api/restaurants/:name", {}, {
-    update: { method: "PUT" }
-  });
+    update: { method: "PUT" },
+       query: { method: "GET", params: {}, isArray: true },
+       get: { method: "GET", params: {}, isArray: false },
+       create: {method: "POST", params: {}}
+     });
 }
 
-function indexController (Restaurant) {
+function indexController (Restaurant, $state) {
   this.restaurants = Restaurant.query()
+  this.restaurant = new Restaurant()
+  this.create = function(){
+    console.log(this.restaurant)
+    this.restaurant.$save()
+  }
 }
 
 function showController ($stateParams, Restaurant) {
@@ -73,7 +77,7 @@ function showController ($stateParams, Restaurant) {
      this.restaurant.$save().then(function(restaurant){
        $state.go("showCtrl",{name: restaurant.name})
      })
-     update: { method: "POST" }
+    //  update: { method: "POST" }
    }
   }
 
