@@ -9,7 +9,7 @@ angular
   ])
 .factory("Restaurant", [
  "$resource",
- Candidate
+ Restaurant
 ])
 .controller("indexCtrl", [
  "Restaurant",
@@ -48,9 +48,9 @@ function Router($stateProvider) {
 }
 
 function indexController (Restaurant) {
-  this.restaurant = Restaurant.query()
+  this.restaurants = Restaurant.query()
 }
 
-function showController ($stateParams, Candidate) {
-    this.restaurants = Restaurant.get({name: $stateParams.name})
+function showController ($stateParams, Restaurant) {
+    this.restaurant = Restaurant.get({name: $stateParams.name})
   }

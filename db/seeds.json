@@ -1,10 +1,39 @@
 [
   {
   "name": "Five Guys",
-  "type": "fast food"
+  "type": "Fast Food",
+  "photo_url": "http://i3.liverpoolecho.co.uk/incoming/article10217278.ece/ALTERNATES/s1227b/Five-Guys-Uxbridge-LR-87.jpg",
+  "street_address": "1400 I St, NW"
 },
 {
-  "name": "SQWR",
-  "type": "fast casual"
+  "name": "&pizza",
+  "type": "Pizza",
+  "photo_url": "http://www.cadencebeatblog.com/wp-content/uploads/2015/12/Day-10-Cadence.jpg",
+  "street_address": "1400 K St, NW"
+},
+{
+  "name": "Grill Kabob",
+  "type": "Afghan",
+  "photo_url": "http://s3.amazonaws.com/product-images.imshopping.com/nimblebuy/enjoy-20-for-10-at-grill-kabob-540382-regular.jpg",
+  "street_address": "1025 Vermont Ave., NW"
+},
+{
+  "name": "Naan and Beyond",
+  "type": "Indian",
+  "photo_url": "http://www.clotureclub.com/wp-content/uploads/2011/04/DSC_0002-e1303363013222.jpg",
+  "street_address": "1710 L St., NW"
+},
+{
+  "name": "Point Chaud",
+  "type": "French",
+  "photo_url": "http://www.popville.com/wp-content/uploads/2010/12/5246081927_973437c214.jpg",
+  "street_address": "1012 14 St., NW"
+},
+{
+  "name": "Kanji Kana",
+  "type": "Japanese",
+  "photo_url": "https://img.washingtonpost.com/rf/image_480w/2010-2019/WashingtonPost/2016/12/05/Weekend/Images/wkdiner1209_001.JPG?uuid=sosVxrqEEeaueb7HLTT4yQ",
+  "street_address": "1018 Vermont Ave., NW"
 }
+
 ]
