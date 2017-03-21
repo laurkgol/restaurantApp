@@ -2,5 +2,9 @@
   {
   "name": "Five Guys",
   "type": "fast food"
+},
+{
+  "name": "SQWR",
+  "type": "fast casual"
 }
 ]

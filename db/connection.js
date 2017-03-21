@@ -1,13 +1,4 @@
 var mongoose = require("mongoose");
-
-var RestaurantSchema = new mongoose.Schema(
-  {
-    name: String,
-    type: String
-  }
-)
-
-mongoose.model("Restaurant",RestaurantSchema);
-mongoose.connect("mogodb://localhost/restaurants");
+mongoose.connect("mongodb://localhost/restaurants");
 
 module.exports = mongoose;
