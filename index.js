@@ -1,7 +1,6 @@
 const express = require('express')
-const Restaurant = require('./db/models.js')
+const Restaurant = require('./db/models.js').Restaurant
 var parser = require("body-parser")
-var mongoose = require("./db/connection")
 
 const app = express()
 
@@ -22,7 +21,7 @@ app.get("/api/restaurants", function(req, res){
 });
 
   app.get("/", function(req, res){
-    res.render("restaurants");
+    res.sendFile(__dirname + '/index.html');
   });
 
 
@@ -48,8 +47,4 @@ app.put("/api/restaurants/:name", function(req, res){
   Restaurant.findOneAndUpdate({name: req.params.name}, req.body.restaurant, {new: true}).then(function(restaurant){
     res.json(restaurant)
   });
-});
-
-app.listen(app.get("port"), function(){
-  console.log("It's aliiive!");
 });
